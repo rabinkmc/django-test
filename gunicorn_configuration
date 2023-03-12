@@ -1,0 +1,25 @@
+#!/bin/bash
+
+NAME="scratchpads"  #Django application name
+DIR=/home/rabind/scratchpads/
+USER=rabind #User to run this script as
+GROUP=rabind #Group to run this script as
+WORKERS=3     #Number of workers that Gunicorn should spawn
+# SOCKFILE=unix:/home/rabind/scratchpads/gunicorn.sock   #This socket file will communicate with Nginx 
+DJANGO_SETTINGS_MODULE=config.settings   #Which Django setting file should use
+DJANGO_WSGI_MODULE=config.wsgi           #Which WSGI file should use
+LOG_LEVEL=debug
+cd $DIR
+source /home/rabind/scratchpads/.venv/bin/activate  #Activate the virtual environment
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+# export PYTHONPATH=$DIR:$PYTHONPATH
+
+#Command to run the progam under supervisor
+exec /home/rabind/scratchpads/.venv/bin/gunicorn config.wsgi \
+--name $NAME \
+--workers $WORKERS \
+--user=$USER \
+--group=$GROUP \
+--bind=0.0.0.0:8000 \
+--log-level=$LOG_LEVEL \
+--log-file=-
