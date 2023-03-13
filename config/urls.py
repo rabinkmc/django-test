@@ -20,7 +20,7 @@ from rest_framework.response import Response
 
 @api_view()
 def index(_):
-    return Response("index hello.")
+    return Response("Index page")
 
 
 urlpatterns = [
