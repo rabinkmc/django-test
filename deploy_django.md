@@ -39,5 +39,14 @@ module.exports = {
 
 ## Add deployment hooks
 
-1. install requirements
-2. disable `install npm packages`
+1. add install requirements hook 
+```
+pip install -r requirements.txt
+```
+
+2. add database migration hook 
+```
+python manage.py migrate
+```
+
+3. disable **install npm packages**
