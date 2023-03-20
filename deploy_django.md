@@ -36,3 +36,8 @@ module.exports = {
   }
 }
 ```
+
+## Add deployment hooks
+
+1. install requirements
+2. disable `install npm packages`
