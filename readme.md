@@ -6,7 +6,7 @@ Before proceeding, you need to have a cleavr account and provision a server with
 
 ## Add Postgres database
 
-If you haven't added your server during provisioning: 
+If you haven't added your database during provisioning: 
 
 To add a postgres database: go to Servers > Databases > Add new Database 
 
