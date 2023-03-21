@@ -20,7 +20,7 @@ from rest_framework.response import Response
 
 @api_view()
 def index(_):
-    return Response("Index page")
+    return Response("Your Django API server is now deployed on Cleavr")
 
 
 urlpatterns = [
