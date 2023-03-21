@@ -74,3 +74,5 @@ python manage.py migrate
 Your api server will be deployed on the site.
 
 ![](images/index.png)
+
+While deploying the api server, we haven't used virtual environment and we are directly using "runserver" instead of gunicorn(uvicorn) to run the server. I will soon come up with a new blog addressing these issues.
